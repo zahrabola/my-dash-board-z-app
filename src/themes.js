@@ -27,8 +27,8 @@ import { createTheme } from "@mui/material/styles";
 #C0C2C9 - slate grey
 #970C10 - redish 
 */
-export const tokens = (mode) = ({
-... (mode === 'dark' 
+export const tokens = (mode) => ({
+    ...(mode === "dark"
 ? 
 {
 // colour design token 
@@ -150,8 +150,7 @@ darkredAccent: {
     800: "#d59e9f",
     900: "#eacecf",
 },/* redish*/
-}
-)   
+})   
 });
 
 
@@ -232,11 +231,12 @@ export const SettingTheme = (mode) => {
 export const ColorContextMode = createContext({
     togglecolorMode: () => {},
 });
-export const useMemo = () => {
+export const useMode = () => {
     const [mode, setMode] = useState("dark");
      const colorMode = useMemo(
         () => ({
-            togglecolorMode: () =>  setMode((prev === "light" ? "dark" : "light")) 
+            togglecolorMode: () => 
+            setMode((prev) => (prev === "light" ? "dark" : "light")),
         }),
         []
      );
