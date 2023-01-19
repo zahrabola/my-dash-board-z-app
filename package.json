@@ -5,7 +5,8 @@
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
-    "@mui/material": "^5.11.4",
+    "@mui/icons-material": "^5.11.0",
+    "@mui/material": "^5.11.5",
     "@nivo/chord": "^0.80.0",
     "@nivo/geo": "^0.80.0",
     "@nivo/line": "^0.80.0",
