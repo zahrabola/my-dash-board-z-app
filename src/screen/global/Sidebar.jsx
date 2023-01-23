@@ -29,7 +29,7 @@ const Item = ({ title, to, icon, isselected, setisSelected}) => {
     return (
          <MenuItem active={isselected === title}
          style={{
-            color: colors.grey[100],
+            color: colors.darkredAccent[100],
          }}
          onClick={() => setisSelected(title)}
          icon={icon}
@@ -40,9 +40,7 @@ const Item = ({ title, to, icon, isselected, setisSelected}) => {
          <Link to={to} />
          </MenuItem>
     )
-}
-
-
+};
 
 const Sidebar = () => {
     const theme = useTheme();
@@ -74,13 +72,13 @@ const [isselected, setisSelected] = useState("Dashboard");// selected is what pa
             <MenuItem onClick={() => setisCollapsed(!isCollapsed)}
             icon={isCollapsed ? <MenuOutlinedIcon />: undefined }
             style={{
-                margin:"12px 0 20px 0",
-                color: colors.grey[100],
+                margin:"10px 0 20px 0",
+                color: colors.darkredAccent[200],
             }}
         >
-            {isCollapsed && (
+            {!isCollapsed && (
                 <Box display="flex" justifyContent="space-between" alignItems="center" ml="15px">
-                    <Typography variant="h3" color={colors.grey[100]}>
+                    <Typography variant="h3"  color={colors.darkredAccent[200]}>
                         Admin
                     </Typography>
                     <IconButton onClick={() => setisCollapsed(!isCollapsed)} >
@@ -90,7 +88,7 @@ const [isselected, setisSelected] = useState("Dashboard");// selected is what pa
             )}
             </MenuItem>
 
-            {!isCollapsed && (
+        {/* not collased*/}   {!isCollapsed && (
                 <Box mb="25px">
                     <Box display="flex" justifyContent="center" alignItems="center">
                         <img alt="userprofile"
@@ -112,24 +110,66 @@ const [isselected, setisSelected] = useState("Dashboard");// selected is what pa
             )}
 
 {/* items */}
-
-
-
-
-
-
-
-
-
-
-
-
-
+<Box paddingLeft={isCollapsed ? undefined : "10%"}>
+    <Item title="Dashboard"
+    to="/"
+     icon={<HomeOutlinedIcon />}
+     isselected={isselected}
+     setisSelected={setisSelected}
+     />
+    <Typography variant="h6" color={colors.grey[300]} sx={{m: "15px 0 5px 20px"}}>
+        Data
+     </Typography>
+    <Item title="Manage Team" to="/team"
+  
+     icon={<PeopleOutlinedIcon />}
+     isselected={isselected}
+     setisSelected={setisSelected}/>
+    <Item title="Contact Information" to="/contacts"
+     icon={<ContactsOutlinedIcon />}
+     isselected={isselected}
+     setisSelected={setisSelected}/>
+    <Item title="Invoice Balance" to="/invoices"
+     icon={<ReceiptOutlinedIcon/>}
+     isselected={isselected}
+     setisSelected={setisSelected}/>
+    <Typography variant="h6" color={colors.grey[300]} sx={{m: "15px 0 5px 20px"}}>
+        Pages
+    </Typography>
+    <Item  title="Profile Form" to="/form"
+     icon={<PersonOutlinedIcon />}
+     isselected={isselected}
+     setisSelected={setisSelected} />
+    <Item title="Calendar" to="/calendar"
+     icon={<CalendarTodayOutlinedIcon />}
+     isselected={isselected}
+     setisSelected={setisSelected} />
+    <Item title="Faq Page" to="/faq"
+     icon={<HelpOutlineOutlinedIcon />}
+     isselected={isselected}
+     setisSelected={setisSelected}/>
+    <Typography variant="h6" color={colors.grey[300]} sx={{m: "15px 0 5px 20px"}}>
+        Charts
+    </Typography>
+    <Item  title="Bar Chart" to="/bar"
+     icon={<BarChartOutlinedIcon />}
+     isselected={isselected}
+     setisSelected={setisSelected}/>
+    <Item  title="Pie Chart" to="/pie"
+     icon={<PieChartOutlineOutlinedIcon/>}
+     isselected={isselected}
+     setisSelected={setisSelected}/>
+    <Item title="Line Chart" to="/line"
+     icon={<TimelineOutlinedIcon/>}
+     isselected={isselected}
+     setisSelected={setisSelected} />
+    <Item  title="Geography Chart" to="/geography"
+     icon={<MapOutlinedIcon/>}
+     isselected={isselected}
+     setisSelected={setisSelected}/>
+          </Box>
         </Menu>
       </ProSidebarProvider>
-
-
-
       </Box>
     )
 }

@@ -16,7 +16,7 @@ import FAQ from "./screen/faq/FAQ";
 import Calendar from "./screen/calendar/Calendar";
 import Geography from "./screen/geography/Geography";
 
-{/*52:36*/}
+/*52:36*/
 
 function App() {
   const [theme,  colorMode ] = useMode();
