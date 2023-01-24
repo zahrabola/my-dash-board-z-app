@@ -4,7 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import './App.css';
 import Topbar from "./screen/global/Topbar";
 import Sidebar from "./screen/global/Sidebar";
-import Dashboard from "./screen/dashboard/Dashboard";
+ import Dashboard from "./screen/dashboard/Dashboard";
 import Team from "./screen/team/Team";
 import Contacts from "./screen/contacts/Contacts";
 import Invoice from "./screen/invoice/Invoice";
@@ -15,21 +15,23 @@ import Line from "./screen/line/Line";
 import FAQ from "./screen/faq/FAQ";
 import Calendar from "./screen/calendar/Calendar";
 import Geography from "./screen/geography/Geography";
+import { useState } from "react";
 
-/*1:20:56*/
+/*1:53:17*/
 
 function App() {
   const [theme,  colorMode ] = useMode();
+  const [isSidebar, setIsSidebar] = useState(true);
   return (
   <ColorContextMode.Provider value={colorMode}>
     <ThemeProvider theme={theme}>
       <CssBaseline />
     <div className="app">
-    <Sidebar />
+    <Sidebar  isSidebar={isSidebar}  />
    <main className="content">
-    <Topbar />
+    <Topbar setIsSidebar={setIsSidebar} />
     <Routes>
-<Route path="/" element={<Dashboard />}/>
+       <Route path="/" element={<Dashboard />}/>
 <Route path="/team" element={<Team />}/>
 <Route path="/contacts" element={<Contacts />}/>
 <Route path="/invoices" element={<Invoice />}/>
@@ -41,6 +43,7 @@ function App() {
 <Route path="/calendar" element={<Calendar/>}/>
 <Route path="/geography" element={<Geography/>}/>
     </Routes>
+
    </main>
   </div>
  </ThemeProvider>
