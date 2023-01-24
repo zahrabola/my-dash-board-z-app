@@ -76,7 +76,7 @@ const [isselected, setisSelected] = useState("Dashboard");// selected is what pa
                 color: colors.darkredAccent[200],
             }}
         >
-            {!isCollapsed && (
+  {/* not collased*/}   {!isCollapsed && (
                 <Box display="flex" justifyContent="space-between" alignItems="center" ml="15px">
                     <Typography variant="h3"  color={colors.darkredAccent[200]}>
                         Admin
@@ -87,8 +87,7 @@ const [isselected, setisSelected] = useState("Dashboard");// selected is what pa
                 </Box>
             )}
             </MenuItem>
-
-        {/* not collased*/}   {!isCollapsed && (
+         {!isCollapsed && (
                 <Box mb="25px">
                     <Box display="flex" justifyContent="center" alignItems="center">
                         <img alt="userprofile"
@@ -103,7 +102,7 @@ const [isselected, setisSelected] = useState("Dashboard");// selected is what pa
                         Zahra Olanrewaju
                     </Typography>
                     <Typography variant="h5" color={colors.oliveAccent[300]}>
-                   Admin
+                   Admins
                     </Typography>
                 </Box>
                 </Box>
@@ -111,8 +110,9 @@ const [isselected, setisSelected] = useState("Dashboard");// selected is what pa
 
 {/* items */}
 <Box paddingLeft={isCollapsed ? undefined : "10%"}>
-    <Item title="Dashboard"
-    to="/"
+    <Item 
+     title="Dashboard"
+     to="/"
      icon={<HomeOutlinedIcon />}
      isselected={isselected}
      setisSelected={setisSelected}
@@ -120,50 +120,69 @@ const [isselected, setisSelected] = useState("Dashboard");// selected is what pa
     <Typography variant="h6" color={colors.grey[300]} sx={{m: "15px 0 5px 20px"}}>
         Data
      </Typography>
-    <Item title="Manage Team" to="/team"
-  
+    <Item 
+     title="Manage Team"
+     to="/team"
      icon={<PeopleOutlinedIcon />}
      isselected={isselected}
      setisSelected={setisSelected}/>
-    <Item title="Contact Information" to="/contacts"
+    <Item 
+     title="Contact Information" 
+     to="/contacts"
      icon={<ContactsOutlinedIcon />}
      isselected={isselected}
      setisSelected={setisSelected}/>
-    <Item title="Invoice Balance" to="/invoices"
+    <Item
+     title="Invoice Balance" 
+     to="/invoices"
      icon={<ReceiptOutlinedIcon/>}
      isselected={isselected}
      setisSelected={setisSelected}/>
     <Typography variant="h6" color={colors.grey[300]} sx={{m: "15px 0 5px 20px"}}>
         Pages
     </Typography>
-    <Item  title="Profile Form" to="/form"
+    <Item  
+     title="Profile Form" 
+     to="/form"
      icon={<PersonOutlinedIcon />}
      isselected={isselected}
      setisSelected={setisSelected} />
-    <Item title="Calendar" to="/calendar"
+    <Item 
+     title="Calendar"
+     to="/calendar"
      icon={<CalendarTodayOutlinedIcon />}
      isselected={isselected}
      setisSelected={setisSelected} />
-    <Item title="Faq Page" to="/faq"
+    <Item 
+     title="Faq Page"
+     to="/faq"
      icon={<HelpOutlineOutlinedIcon />}
      isselected={isselected}
      setisSelected={setisSelected}/>
     <Typography variant="h6" color={colors.grey[300]} sx={{m: "15px 0 5px 20px"}}>
         Charts
     </Typography>
-    <Item  title="Bar Chart" to="/bar"
+    <Item   
+     title="Bar Chart" 
+     to="/bar"
      icon={<BarChartOutlinedIcon />}
      isselected={isselected}
      setisSelected={setisSelected}/>
-    <Item  title="Pie Chart" to="/pie"
+    <Item  
+     title="Pie Chart"
+     to="/pie"
      icon={<PieChartOutlineOutlinedIcon/>}
      isselected={isselected}
      setisSelected={setisSelected}/>
-    <Item title="Line Chart" to="/line"
+    <Item 
+     title="Line Chart" 
+     to="/line"
      icon={<TimelineOutlinedIcon/>}
      isselected={isselected}
      setisSelected={setisSelected} />
-    <Item  title="Geography Chart" to="/geography"
+    <Item 
+     title="Geography Chart" 
+     to="/geography"
      icon={<MapOutlinedIcon/>}
      isselected={isselected}
      setisSelected={setisSelected}/>
