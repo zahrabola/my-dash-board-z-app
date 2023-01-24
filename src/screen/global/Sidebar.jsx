@@ -31,15 +31,19 @@ const Item = ({ title, to, icon, isselected, setSelected }) => {
       <MenuItem
         active={isselected === title}
         style={{
-          color: colors.grey[100],
+          color: colors.grey[400],
         }}
         onClick={() => setSelected(title)}
         icon={icon}
       >
+         
         <Typography>{title}</Typography>
-        <Link to={to}> </Link>
+        <Link to={to}/> 
       </MenuItem>
+   
+      
     );
+  
   };
   
   const Sidebar = () => {
@@ -110,14 +114,15 @@ const [isselected, setSelected] = useState("Dashboard");// selected is what page
 
 {/* items */}
 <Box paddingLeft={isCollapsed ? undefined : "10%"}>
-<Item
+           <Link to="/" href="#/">
+           <Item  
               title="Dashboard"
               to="/"
               icon={<HomeOutlinedIcon />}
               isselected={isselected}
               setSelected={setSelected}
             />
-
+            </Link>           
             <Typography
               variant="h6"
               color={colors.grey[300]}
@@ -125,6 +130,8 @@ const [isselected, setSelected] = useState("Dashboard");// selected is what page
             >
               Data
             </Typography>
+            
+            <Link to="/team">
             <Item
               title="Manage Team"
               to="/team"
@@ -132,6 +139,8 @@ const [isselected, setSelected] = useState("Dashboard");// selected is what page
               isselected={isselected}
               setSelected={setSelected}
             />
+            </Link>
+            <Link to="/contacts">
             <Item
               title="Contacts Information"
               to="/contacts"
@@ -139,13 +148,17 @@ const [isselected, setSelected] = useState("Dashboard");// selected is what page
               isselected={isselected}
               setSelected={setSelected}
             />
-            <Item
+            </Link>
+           <Link  to="/invoices">
+           <Item
               title="Invoices Balances"
-              to="/invoices"
+             
               icon={<ReceiptOutlinedIcon />}
               isselected={isselected}
               setSelected={setSelected}
             />
+           </Link>
+           
 
             <Typography
               variant="h6"
@@ -154,28 +167,33 @@ const [isselected, setSelected] = useState("Dashboard");// selected is what page
             >
               Pages
             </Typography>
+            <Link to="/form">
             <Item
               title="Profile Form"
-              to="/form"
+             /*  to="/form"*/
               icon={<PersonOutlinedIcon />}
               isselected={isselected}
               setSelected={setSelected}
             />
-            <Item
+            </Link>
+          <Link to="/calendar">
+          <Item
               title="Calendar"
               to="/calendar"
               icon={<CalendarTodayOutlinedIcon />}
               isselected={isselected}
               setSelected={setSelected}
             />
-            <Item
+          </Link>
+           <Link to="/faq">
+           <Item
               title="FAQ Page"
               to="/faq"
               icon={<HelpOutlineOutlinedIcon />}
               isselected={isselected}
               setSelected={setSelected}
             />
-
+           </Link>
             <Typography
               variant="h6"
               color={colors.grey[300]}
@@ -183,6 +201,7 @@ const [isselected, setSelected] = useState("Dashboard");// selected is what page
             >
               Charts
             </Typography>
+            <Link to="/bar">
             <Item
               title="Bar Chart"
               to="/bar"
@@ -190,13 +209,17 @@ const [isselected, setSelected] = useState("Dashboard");// selected is what page
               isselected={isselected}
               setSelected={setSelected}
             />
-            <Item
+            </Link>
+           <Link to="/pie">
+           <Item
               title="Pie Chart"
               to="/pie"
               icon={<PieChartOutlineOutlinedIcon />}
               isselected={isselected}
               setSelected={setSelected}
             />
+           </Link>
+            <Link to="/line">
             <Item
               title="Line Chart"
               to="/line"
@@ -204,13 +227,18 @@ const [isselected, setSelected] = useState("Dashboard");// selected is what page
               isselected={isselected}
               setSelected={setSelected}
             />
-            <Item
+            </Link>
+            
+             <Link to="/geography">
+             <Item
               title="Geography Chart"
               to="/geography"
               icon={<MapOutlinedIcon />}
               isselected={isselected}
               setSelected={setSelected}
             />
+             </Link>
+            
           </Box>
         </Menu>
       </ProSidebarProvider>
