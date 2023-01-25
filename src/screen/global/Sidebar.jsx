@@ -171,7 +171,7 @@ const [isselected, setSelected] = useState("Dashboard");// selected is what page
             <Link to="/form">
             <Item
               title="Profile Form"
-             /*  to="/form"*/
+              to="/form"
               icon={<PersonOutlinedIcon />}
               isselected={isselected}
               setSelected={setSelected}

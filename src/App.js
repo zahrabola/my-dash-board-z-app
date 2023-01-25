@@ -17,7 +17,7 @@ import Calendar from "./screen/calendar/Calendar";
 import Geography from "./screen/geography/Geography";
 import { useState } from "react";
 
-/*1:53:17*/
+/*2:19:51*/
 
 function App() {
   const [theme,  colorMode ] = useMode();
