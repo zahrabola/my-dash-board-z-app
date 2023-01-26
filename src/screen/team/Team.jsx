@@ -47,19 +47,21 @@ const Team = () => {
             p="5px"
             display="flex"
             justifyContent="center"
+        
+            /* border colours  */
             backgroundColor={
               access === "admin"
                 ? colors.oliveAccent[600]
                 : access === "manager"
                 ? colors.oliveAccent[700]
-                : colors.oliveAccent[700]
+                : colors.oliveAccent[800]
             }
             borderRadius="4px"
           >
             {access === "admin" && <AdminPanelSettingsOutlinedIcon />}
             {access === "manager" && <SecurityOutlinedIcon />}
             {access === "user" && <LockOpenOutlinedIcon />}
-            <Typography color={colors.grey[100]} sx={{ ml: "5px" }}>
+            <Typography color={colors.grey[200]} sx={{ ml: "5px" }}>
               {access}
             </Typography>
           </Box>
