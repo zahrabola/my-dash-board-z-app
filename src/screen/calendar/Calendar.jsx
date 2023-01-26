@@ -1,7 +1,8 @@
 import { Box, Typography, List, ListItem, ListItemText,useTheme } from "@mui/material";
 import {tokens} from "../../themes";
 import Header from "../../Components/Header";
-import FullCalendar, { formatDate } from "@fullcalendar/react";
+import FullCalendar from "@fullcalendar/react";
+import { formatDate } from '@fullcalendar/core'
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
@@ -43,10 +44,84 @@ const Calendar = () => {
     return (
       <Box m="20px">
           <Header title="Calendar" subtitle="Full calendar interactive page" />
+          <Box>
+
+          {/* sidebar - calendar */}
+          <Box flex="1 1 20%" backgroundColor={colors.primary[400]} p="15px" borderRadius="4px">
+            <Typography>
+              Events
+            </Typography>
+            <List>
+              {currentevent.map((event) => 
+              <ListItem 
+              key={event.id}
+              sx={{
+                backgroundColor: colors.oliveAccent[500],
+                margin:"10px 0",
+                borderRadius:"2px",
+              }}
+              >
+               <ListItemText 
+               primary={event.title}
+               secondary={
+                <Typography
+                >
+                  {formatDate(event.start,{
+                    day: "numeric",
+                    month: "short",
+                    year:"numeric",
+                    
+                  })}
+                </Typography>
+               }
+               />
+              </ListItem>
+              )}
+            </List>
+          </Box>
 
 
-      </Box>
-    )
+           {/*Calendar*/}
+           <Box flex="1 1 100%" ml="15px" mt="10px"   >
+            <FullCalendar
+            height="75vh"
+            plugins={[
+              dayGridPlugin,
+              timeGridPlugin,
+              interactionPlugin,
+              listPlugin,
+            ]}
+            headerToolbar={{
+              left:"prev,next today",
+              center: "title",
+              right:"dayGridMonth,timeGridWeek,timeGridDay,listMonth",
+            }}
+          
+            initialView="dayGridMonth"
+            editable={true}
+            selectable={true}
+            selectMirror={true}
+            dayMaxEvents={true}
+            select={handleClickData}
+            eventClick={handleClickEvent}
+            eventsSet={(events) => setCurrentEvents(events)}
+            initialEvents ={[
+              {
+                id:"12315",
+                title:"All-day event",
+                date:"26-01-2022"
+              },
+              {
+                id:"523",
+                title:"Timed eventt",
+                date:"31-01-2022"
+              },
+            ]}
+            />
+          </Box>
+       </Box>
+     </Box>
+   )
 }
 
 export default Calendar;
