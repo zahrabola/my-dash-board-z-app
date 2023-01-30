@@ -85,6 +85,7 @@ const Calendar = () => {
            <Box flex="1 1 100%" ml="15px" mt="10px"   >
             <FullCalendar
             height="75vh"
+            
             plugins={[
               dayGridPlugin,
               timeGridPlugin,
@@ -96,7 +97,7 @@ const Calendar = () => {
               center: "title",
               right:"dayGridMonth,timeGridWeek,timeGridDay,listMonth",
             }}
-          
+
             initialView="dayGridMonth"
             editable={true}
             selectable={true}
@@ -105,6 +106,7 @@ const Calendar = () => {
             select={handleClickData}
             eventClick={handleClickEvent}
             eventsSet={(events) => setCurrentEvents(events)}
+       
             initialEvents ={[
               {
                 id:"12315",
