@@ -1,8 +1,17 @@
+import { Box } from "@mui/material";
+import BarChart from "../../Components/BarChart";
+import Header from "../../Components/Header";
+
+
+
 const Bar = () => {
     return (
-        <div>
-         Bar
-        </div>
+      <Box m="20px">
+        <Header title="Bar Chart" subtitle="Bar chart information"  />
+        <Box  height="75vh">
+            <BarChart />
+        </Box>
+      </Box>
     )
 }
 
