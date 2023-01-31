@@ -1,9 +1,15 @@
-
+import { Box } from "@mui/material";
+import Header from "../../Components/Header";
+import LineChart from "../../Components/LineChart";
 const Line = () => {
     return (
-        <div>
-     Line
-        </div>
+        <Box m="20px">
+        <Header title="Line Chart" subtitle="Line chart information"  />
+          <Box  height="85vh">
+           <LineChart />
+          </Box>
+  
+    </Box>
     )
 }
 
