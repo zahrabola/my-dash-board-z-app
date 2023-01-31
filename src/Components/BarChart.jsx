@@ -11,24 +11,24 @@ const BarChart = ({isDashboard = false}) => {
         <ResponsiveBar
         data={data}
         theme={{
-
-     
+            tooltip: {
+                container: {
+                    background: colors.TealAccent[800],
+                    color: colors.grey[100],
+                    fontSize: 12
+                }, 
+            },
           axis: {
             domain: {
               line: {
                 stroke: colors.grey[100],
               },
             },
-            
+           
             legend: {
               text: {
                 fill: colors.grey[100],
               },
-            },
-            tooltip: {
-            container: {
-                background:colors.darkredAccent[400]
-            }
             },
             ticks: {
               line: {
@@ -129,7 +129,7 @@ const BarChart = ({isDashboard = false}) => {
             ],
           },
         ]}
-     
+        isInteractive={true} // hover text night
         role="application"
         barAriaLabel={function (e) {
           return e.id + ": " + e.formattedValue + " in country: " + e.indexValue;
