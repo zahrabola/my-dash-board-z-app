@@ -8,13 +8,48 @@ const PieChart = () => {
     return (
         <ResponsivePie
         data={data}
+        //theme-added
+        theme={{
+            tooltip: {
+                container: {
+                    background: colors.TealAccent[800],
+                    color: colors.grey[100],
+                    fontSize: 12
+                }, 
+            },
+            axis: {
+              domain: {
+                line: {
+                  stroke: colors.grey[100],
+                },
+              },
+              legend: {
+                text: {
+                  fill: colors.grey[100],
+                },
+              },
+              ticks: {
+                line: {
+                  stroke: colors.grey[100],
+                  strokeWidth: 1,
+                },
+                text: {
+                  fill: colors.grey[100],
+                },
+              },
+            },
+            legends: {
+              text: {
+                fill: colors.grey[100],
+              },
+            },
+          }}
 
 
 
 
 
-
-
+//theme-added
         margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
         innerRadius={0.5}
         padAngle={0.7}
@@ -47,7 +82,6 @@ const PieChart = () => {
             ]
         }}
         isInteractive={true}
-        
         defs={[
             {
                 id: 'dots',

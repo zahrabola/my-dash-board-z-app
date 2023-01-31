@@ -10,6 +10,7 @@ const BarChart = ({isDashboard = false}) => {
     return (
         <ResponsiveBar
         data={data}
+        //theme-added
         theme={{
             tooltip: {
                 container: {
@@ -46,7 +47,7 @@ const BarChart = ({isDashboard = false}) => {
             },
           },
         }}
-        
+        //theme-added
         keys={["hot dog", "burger", "sandwich", "kebab", "fries", "donut"]}
         indexBy="country"
         margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
