@@ -1,10 +1,21 @@
-
+import { Box, useTheme} from "@mui/material";
+import GeoChart from "../../Components/GeoChart";
+import Header from "../../Components/Header";
+import { tokens } from "../themes";
 
 const Geography = () => {
+  const theme = useTheme();
+  const colors = tokens(theme.palette.mode);
+
     return (
-        <div>
-          Geography 
-        </div>
+      <Box m="20px">
+      <Header title="Geography" subtitle="LGeography
+       chart information"  />
+        <Box  height="85vh" border={`1px solid ${colors.grey[100]}`} borderRadius="5px">
+       <GeoChart />
+        </Box>
+
+  </Box>
     )
 }
 
