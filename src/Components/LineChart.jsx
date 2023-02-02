@@ -47,7 +47,7 @@ const LineChart = ({isDashboard = false}) => {
           },
         }}
          //theme-added
-         colors={isDashboard ? { datum: "color" } : { scheme: "nivo" }}  //changed
+      /*    colors={isDashboard ? { datum: "color" } : { scheme: "nivo" }} */  //changed
         margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
         xScale={{ type: 'point' }}
         yScale={{
@@ -80,6 +80,7 @@ const LineChart = ({isDashboard = false}) => {
             legendOffset: -40,
             legendPosition: 'middle'
         }}
+       
         pointSize={10}
         pointColor={{ theme: 'background' }}
         pointBorderWidth={2}
